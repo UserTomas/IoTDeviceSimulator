@@ -1,6 +1,6 @@
 "use strict"
 
-let ReadFile = require('./fileReader');
+let ReadFile = require('../fileReader');
 let schedule = require('node-schedule');
 
 function SmartTv(initData) {
