@@ -4,7 +4,7 @@ Data generate by devices are forwarded to ThingsBoard IoT platform.
 
 ## Requirements
 
-Tested with: ThingsBoard gateway v1.4.0
+Tested with: ThingsBoard gateway v1.4.0,
              ThingsBoard v2.0
 
 
