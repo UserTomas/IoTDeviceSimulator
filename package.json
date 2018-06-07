@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "mqtt": "^2.18.0",
-    "node-schedule": "^1.3.0"
+    "node-schedule": "^1.3.0",
+    "save": "^2.3.2",
+    "toml": "^2.3.3"
   }
 }

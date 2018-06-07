@@ -1,5 +1,0 @@
-{
-  "channels": ["HDMI_hallway"],
-  "timeSchedule": {"from": "23:03","to": "23:04"},
-  "volume": {"min": 0, "max": 10}
-}

@@ -3,8 +3,8 @@
     "uploadFrequency": 10,
 		"channels": ["channel1", "channel2", "channel3", "YouTube", "Netflix", "radio", "NAS", "HDMI"],
 		"rndTimeGenerator": {
-			"min": 0.1,
-			"max": 0.8
+			"min": 30,
+			"max": 90
 		}
 	},
 	"hallwayConfig": {

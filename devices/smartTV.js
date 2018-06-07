@@ -18,7 +18,7 @@ function SmartTv(initData) {
     serialNumber: initData.uniqueId
   };
 
-  let flReader = new ReadFile("./config/defaultConfig.json");
+  let flReader = new ReadFile("./config/config.json");
   let deviceConfig = JSON.parse(flReader.readFile());
 
   //individual settings for device
@@ -58,7 +58,14 @@ function SmartTv(initData) {
           this.isOn = 1;
         }
       }
+    }else if (individualSet.hasOwnProperty('rndTimeGenerator')) {
+      this.randTimeMin = individualSet.rndTimeGenerator.min;
+      this.randTimeMax = individualSet.rndTimeGenerator.max;
+      //set up a random turn on/off the device
+      this.turnOnTimer();
     }else {
+      this.randTimeMin = deviceConfig.defaultConfig.rndTimeGenerator.min;
+      this.randTimeMin = deviceConfig.defaultConfig.rndTimeGenerator.max;
       //set up a random turn on/off the device
       this.turnOnTimer();
     }
@@ -68,15 +75,6 @@ function SmartTv(initData) {
       this.minVolume = individualSet.volume.min;
       this.maxVolume = individualSet.volume.max;
       this.telemetry.volume = Math.floor(((this.maxVolume - this.minVolume) / 2));
-    }
-
-    // set up time in minutes used for generate random switching the devices
-    if (individualSet.hasOwnProperty('rndTimeGenerator')) {
-      this.randTimeMin = individualSet.rndTimeGenerator.min;
-      this.randTimeMax = individualSet.rndTimeGenerator.max;
-    }else {
-      this.randTimeMin = deviceConfig.defaultConfig.rndTimeGenerator.min;
-      this.randTimeMin = deviceConfig.defaultConfig.rndTimeGenerator.max;
     }
 
   // defaule settings with random changing for all the temetetry attributes

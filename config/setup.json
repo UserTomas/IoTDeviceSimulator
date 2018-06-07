@@ -1,8 +1,7 @@
 {
   "devices": [
-    {"type": "tv","uniqueId":"TV-015","settings":"hallwayConfig"},
+    {"type": "tv","uniqueId":"TV-015"},
     {"type": "tv","uniqueId":"TV-016","settings":"hallwayConfig"},
-    {"type": "tv","uniqueId":"TV-017","settings":"hallwayConfig"}
-
+    {"type": "tv","uniqueId":"TV-017","settings":"defaultConfig"}
   ]
 }
