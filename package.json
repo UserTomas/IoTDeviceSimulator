@@ -4,7 +4,7 @@
   "description": "",
   "main": "attributes.js",
   "scripts": {
-    "start": "node index.js ./config/setup.json",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "tomas",

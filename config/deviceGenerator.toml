@@ -1,0 +1,17 @@
+# Device data generator
+
+#name of an output file
+fileName = "lidl"
+
+#device categories
+[[devices]]
+name = "tvHall"
+number = 20
+settings = "hallwayConfig"
+[[devices]]
+name = "tvOffice"
+number = 10
+[[devices]]
+number = 8
+name = "TV"
+settings = "defaultConfig"

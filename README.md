@@ -16,9 +16,15 @@ Configure both thingsBoard gateway and demo.ThingsBoard.io
 
 ## Basic Usage
 
-Run application form command line with
+Project consist of two separate applications.
+"deviceGenerator" generate json with devices parameters. This file is necessarily for running main application. Device generator create new setup file according to "deviceGenerator.toml" file, where are stored all the settings.
 ```sh
-$ npm start
+$ node deviceGenerator.js
+```
+
+Run application from command line with
+```sh
+$ npm start setup.json
 ```
 
 ## Configuration

@@ -6,7 +6,7 @@ let ThingsBoard = require('./thingsBoard');
 // Reads the access token from arguments
 const setupFile = process.argv[2];
 
-let imput = new ImputFile(setupFile);
+let imput = new ImputFile(`./config/${ setupFile }`);
 let devices = imput.readFile();
 if (devices === 1) {
   console.log('Exited!');
