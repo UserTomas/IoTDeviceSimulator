@@ -1,19 +1,13 @@
 "use strict"
 
 let SmartTV = require('./devices/smartTV');
-
-
 // Requires node.js and mqtt library installed.
 var mqtt = require('mqtt');
-
-
-const thingsboardHost = "demo.thingsboard.io";
 
 
 // Default topics. See http://thingsboard.io/docs/reference/mqtt-api/ for more details.
 const attributesTopic = 'devices/attributes';
 const gatewayAttributesTopic = 'gateway/attributes';
-// const telemetryTopic = 'v1/devices/me/telemetry'; //ThingsBoard directly
 const telemetryTopic = 'gateway/telemetry'; //gateway
 const telemetryTopicOff = 'gateway/telemetry/off'; //gateway
 const attributesRequestTopic = 'v1/devices/me/attributes/request/1';
@@ -56,45 +50,6 @@ function ThingsBoard(deviceInitialData) {
     uploadInterval = setInterval(uploadStats, device.uploadFrequency * 1000);
   });
 
-  // client.on('message', function (topic, message) {
-  //   if (topic === attributesTopic) {
-  //     // Process attributes update notification
-  //     console.log('Received attribute update notification: %s', message.toString());
-  //     var data = JSON.parse(message);
-  //     if (data.uploadFrequency && data.uploadFrequency != currentFrequency) {
-  //       // Reschedule upload using new frequency
-  //       rescheduleStatsUpload(data.uploadFrequency);
-  //     }
-  //     if (data.latestFirmwareVersion && data.latestFirmwareVersion != device.firmwareVersion) {
-  //       // Received new upload frequency configuration
-  //       console.log('Device %s. New firmware version is available: %s',data.serialNumber, data.latestFirmwareVersion);
-  //     }
-  //   }
-  //   } else if (topic === attributesResponseTopic) {
-  //     // Process response to attributes request
-  //     console.log('Received response to attribute request: %s', message.toString());
-  //     var data = JSON.parse(message);
-  //     if (data.client && data.client.appState) {
-  //       appState = data.client.appState;
-  //       console.log('Restore app state to: %s', appState);
-  //     } else {
-  //       appState = random();
-  //       console.log('This is first application launch. Going to publish random application state: %s', appState);
-  //       client.publish(attributesTopic, JSON.stringify({'appState': appState}));
-  //     }
-  //     if (data.shared) {
-  //       if (data.shared.uploadFrequency && data.shared.uploadFrequency != currentFrequency) {
-  //         // Received new upload frequency configuration
-  //         rescheduleStatsUpload(data.shared.uploadFrequency);
-  //       }
-  //       if (data.shared.latestFirmwareVersion && data.shared.latestFirmwareVersion != device.firmwareVersion) {
-  //         // Received new upload frequency configuration
-  //         console.log('Device %s. New firmware version is available: %s',data.serialNumber, data.shared.latestFirmwareVersion);
-  //       }
-  //     }
-  //   }
-  // })
-
   //generate random appstate
   function random() {
       return Math.floor(Math.random() * 1000);
@@ -125,6 +80,5 @@ function ThingsBoard(deviceInitialData) {
   }
 
 }
-
 
 module.exports = ThingsBoard;
